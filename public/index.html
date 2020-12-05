@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VLSM</title>
+</head>
+<body>
+
+  <h2>Calculadora VLSM - por Beatriz Velasco</h2>
+
+  <form onsubmit="return false;">
+    Cuantas subredes necesitas crear?<br>
+    <input type="number" id="input_num_of_subnets" min="2" max="999" maxlength="3" placeholder="4">
+    <button onclick="change_subnet_number();">Cambiar</button><span id="nets" style="display:none;">4</span>
+  </form>
+
+  <form onsubmit="return false;">
+    <p>Ingresa un dirección de red en notación CIDR<br>
+    <input type="text" id="input_network" value="192.168.1.0/24"><span id="not_valid_ip" style="background-color: yellow;"></span></p>
+    
+    <p id="subnet_pargraph">
+    <span class="column">Subred</span><span class="column" style="padding-left: 135px;">IP asignables</span><br>
+    <input type="text" id="name1" value="Subred 1">
+    <input type="text" id="hosts1" placeholder="Cantidad" tabindex="1"><br>
+    <input type="text" id="name2" value="Subred 2">
+    <input type="text" id="hosts2" placeholder="Cantidad" tabindex="2"><br>
+    <input type="text" id="name3" value="Subred 3">
+    <input type="text" id="hosts3" placeholder="Cantidad" tabindex="3"><br>
+    <input type="text" id="name4" value="Subred 4">
+    <input type="text" id="hosts4" placeholder="Cantidad" tabindex="4"><br>
+    </p>
+    <button onclick="vlsm();">Calcular</button>
+    <button onclick="clear_form();">Limpiar</button>
+  </form>
+
+  <p id="ans"></p>
+
+  <script src="index.js"></script>
+
+</body>
+</html>
